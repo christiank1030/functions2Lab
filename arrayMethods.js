@@ -154,11 +154,9 @@ let bobsTotal = purchases.reduce((price1, price2) => {
 console.log(bobsTotal); */
 
 const bobsTotal = purchases
-    .filter((purchase) => {
-      purchase.owner === "Bob"
-    })
-    .reduce((a, c) => {
-      return a + c["price"]
-    }, 0)
+.filter((purchase) => purchase.owner === "Bob")
+.reduce((prevValue, currValue) => {
+return prevValue + currValue.price
+}, 0)
 
     console.log(bobsTotal);
